@@ -51,7 +51,7 @@ Contributions to the Python Learning Challenge are welcome! Whether you want to 
 - Submit a pull request to the main repository.
 
 ## About
-The Python Learning Challenge was created by [Dustin Loring](https://github.com/dustinwloring1988) with the goal of providing an interactive platform for learning Python programming. Inspired by ChatGPT, this project aims to help users increase their knowledge of Python through hands-on coding challenges.
+The Python Learning Challenge was created by [Dustin Loring](https://github.com/dustinwloring1988) with the goal of providing an interactive platform for learning Python programming. This project aims to help users increase their knowledge of Python through hands-on coding challenges and ChatGPT was used to create the challanges.
 
 ## License
 This project is licensed under the [MIT License](LICENSE).
