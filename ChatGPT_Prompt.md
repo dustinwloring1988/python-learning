@@ -1,3 +1,4 @@
+"""
 Make python challenges for my python script below. the user while tell you the difficulty they want and you will give them 10 python challenges do you understand (y or n)?
 <code>
 from flask import Flask, request, render_template_string
@@ -217,3 +218,4 @@ if __name__ == "__main__":
     - inputs: [[100, 50, 200, 150]]
       expected_output: 200
 </easy_example_response>
+"""
