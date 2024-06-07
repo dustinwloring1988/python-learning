@@ -1,5 +1,7 @@
 # Python Learning Challenge
 
+![Cover Image](web/images/cover.png)
+
 ## Introduction
 The Python Learning Challenge is a web application designed to help users improve their Python programming skills through interactive coding challenges. Whether you're a beginner looking to learn the basics or an experienced developer seeking to sharpen your skills, this platform provides a structured way to practice Python programming in a fun and engaging manner.
 
