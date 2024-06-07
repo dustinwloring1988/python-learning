@@ -294,3 +294,155 @@
       expected_output: True
     - inputs: [["hello1", "world2", "Python3", "3.7"]]
       expected_output: False
+
+- task: "Write a function named 'solve' that takes a string and returns the count of each character as a dictionary."
+  test_cases:
+    - inputs: ["hello"]
+      expected_output: {'h': 1, 'e': 1, 'l': 2, 'o': 1}
+    - inputs: ["programming"]
+      expected_output: {'p': 1, 'r': 2, 'o': 1, 'g': 2, 'a': 1, 'm': 2, 'i': 1, 'n': 1}
+
+- task: "Write a function named 'solve' that takes a list of integers and returns the sum of the squares of all even numbers."
+  test_cases:
+    - inputs: [[1, 2, 3, 4, 5]]
+      expected_output: 20
+    - inputs: [[2, 4, 6, 8, 10]]
+      expected_output: 220
+
+- task: "Write a function named 'solve' that takes a list of strings and returns a new list containing only strings with more than 5 characters."
+  test_cases:
+    - inputs: [["apple", "banana", "orange", "grape"]]
+      expected_output: ["banana", "orange"]
+    - inputs: [["Python", "Java", "C++", "JavaScript"]]
+      expected_output: ["Python", "JavaScript"]
+
+- task: "Write a function named 'solve' that takes two lists of integers and returns True if they have at least one common element, False otherwise."
+  test_cases:
+    - inputs: [[1, 2, 3, 4, 5], [6, 7, 8, 9, 10]]
+      expected_output: False
+    - inputs: [[1, 2, 3, 4, 5], [5, 6, 7, 8, 9]]
+      expected_output: True
+
+- task: "Write a function named 'solve' that takes a list of strings and returns the list sorted by the number of characters in each string (ascending order)."
+  test_cases:
+    - inputs: [["apple", "banana", "orange", "grape"]]
+      expected_output: ["grape", "apple", "banana", "orange"]
+    - inputs: [["Python", "Java", "C++", "JavaScript"]]
+      expected_output: ["Java", "C++", "Python", "JavaScript"]
+
+- task: "Write a function named 'solve' that takes a list of integers and returns the number of prime numbers in the list."
+  test_cases:
+    - inputs: [[2, 3, 4, 5, 6, 7, 8, 9, 10]]
+      expected_output: 4
+    - inputs: [[11, 12, 13, 14, 15]]
+      expected_output: 2
+
+- task: "Write a function named 'solve' that takes a list of strings and returns True if all strings in the list are palindromes, False otherwise."
+  test_cases:
+    - inputs: ["radar", "level", "deified"]
+      expected_output: True
+    - inputs: ["hello", "world", "python"]
+      expected_output: False
+
+- task: "Write a function named 'solve' that takes a list of integers and returns the number of distinct elements in the list."
+  test_cases:
+    - inputs: [[1, 2, 3, 4, 5]]
+      expected_output: 5
+    - inputs: [[1, 1, 2, 2, 3, 3]]
+      expected_output: 3
+
+- task: "Write a function named 'solve' that takes a list of integers and returns True if the list forms an arithmetic sequence, False otherwise."
+  test_cases:
+    - inputs: [[1, 3, 5, 7, 9]]
+      expected_output: True
+    - inputs: [[2, 4, 6, 8, 10]]
+      expected_output: True
+    - inputs: [[1, 2, 4, 8, 16]]
+      expected_output: False
+
+- task: "Write a function named 'solve' that takes a list of integers and returns True if there exists a pair of elements in the list whose sum is equal to 10, False otherwise."
+  test_cases:
+    - inputs: [[1, 2, 3, 4, 5]]
+      expected_output: True
+    - inputs: [[1, 2, 3, 4, 6]]
+      expected_output: False
+    - inputs: [[1, 2, 3, 4, 5, 6, 7, 8, 9]]
+      expected_output: True
+
+- task: "Write a function named 'solve' that takes a list of integers and returns the number of elements that are greater than the average of all elements."
+  test_cases:
+    - inputs: [[1, 2, 3, 4, 5]]
+      expected_output: 2
+    - inputs: [[10, 20, 30, 40, 50]]
+      expected_output: 3
+
+- task: "Write a function named 'solve' that takes a string and returns True if it contains at least one vowel and one consonant, False otherwise."
+  test_cases:
+    - inputs: ["hello"]
+      expected_output: True
+    - inputs: ["python"]
+      expected_output: True
+    - inputs: ["sky"]
+      expected_output: False
+
+- task: "Write a function named 'solve' that takes two strings and returns True if the second string is a rotation of the first string, False otherwise."
+  test_cases:
+    - inputs: ["abcd", "cdab"]
+      expected_output: True
+    - inputs: ["hello", "ohell"]
+      expected_output: False
+    - inputs: ["python", "onpyth"]
+      expected_output: True
+
+- task: "Write a function named 'solve' that takes a list of integers and returns True if the list is sorted in non-decreasing order, False otherwise."
+  test_cases:
+    - inputs: [[1, 2, 3, 4, 5]]
+      expected_output: True
+    - inputs: [[5, 4, 3, 2, 1]]
+      expected_output: False
+    - inputs: [[1, 3, 2, 5, 4]]
+      expected_output: False
+
+- task: "Write a function named 'solve' that takes a list of integers and returns the maximum difference between any two elements in the list."
+  test_cases:
+    - inputs: [[1, 2, 3, 4, 5]]
+      expected_output: 4
+    - inputs: [[10, 20, 30, 40, 50]]
+      expected_output: 40
+
+- task: "Write a function named 'solve' that takes a string and returns True if it is a pangram (contains every letter of the alphabet at least once), False otherwise."
+  test_cases:
+    - inputs: ["The quick brown fox jumps over the lazy dog"]
+      expected_output: True
+    - inputs: ["Hello, world!"]
+      expected_output: False
+
+- task: "Write a function named 'solve' that takes a list of integers and returns True if there is a subsequence of the list that sums to zero, False otherwise."
+  test_cases:
+    - inputs: [[4, 2, -3, 1, 6]]
+      expected_output: True
+    - inputs: [[1, 2, 3, 4, 5]]
+      expected_output: False
+
+- task: "Write a function named 'solve' that takes a list of integers and returns True if the list contains duplicate elements, False otherwise."
+  test_cases:
+    - inputs: [[1, 2, 3, 4, 5]]
+      expected_output: False
+    - inputs: [[1, 2, 3, 4, 1]]
+      expected_output: True
+
+- task: "Write a function named 'solve' that takes a list of integers and returns True if the list is a permutation of the numbers 1 through n, False otherwise."
+  test_cases:
+    - inputs: [[1, 2, 3, 4, 5]]
+      expected_output: True
+    - inputs: [[1, 2, 3, 4, 4]]
+      expected_output: False
+
+- task: "Write a function named 'solve' that takes a string and returns the longest substring without repeating characters."
+  test_cases:
+    - inputs: ["abcabcbb"]
+      expected_output: "abc"
+    - inputs: ["bbbbb"]
+      expected_output: "b"
+    - inputs: ["pwwkew"]
+      expected_output: "wke"
