@@ -8,7 +8,7 @@ with open('challenges.yaml', 'r') as file:
     data = yaml.safe_load(file)
 
 # Extract task descriptions
-tasks = [challenge['task'] for challenge in data]
+tasks = [challenge['task'] for challenge in data if 'task' in challenge]
 
 # Step 2: Generate Embeddings
 def get_embedding(challenge):
@@ -24,7 +24,7 @@ def get_embedding(challenge):
     try:
         response = requests.post(url, headers=headers, data=payload)
         response.raise_for_status()
-        return response.json()['embedding']
+        return response.json().get('embedding')
     except requests.exceptions.RequestException as e:
         print(f"Error fetching embedding for challenge: {e}")
         return None
@@ -35,6 +35,8 @@ for i, task in enumerate(tasks):
     embedding = get_embedding(task)
     if embedding:
         embeddings[i] = embedding
+    else:
+        print(f"Failed to generate embedding for challenge {i+1}")
 
 # Step 3: Calculate Similarities
 def cosine_similarity(vec1, vec2):
@@ -56,4 +58,6 @@ filtered_data = [challenge for i, challenge in enumerate(data) if i not in to_re
 
 # Step 5: Save the Updated challenges.yaml File
 with open('challenges_cleaned.yaml', 'w') as file:
-    yaml.safe_dump(filtered_data, file)
+    yaml.safe_dump(filtered_data, file, allow_unicode=True)
+
+print("Filtered challenges saved to challenges_cleaned.yaml")

@@ -1,0 +1,401 @@
+- task: Write a function named 'solve' that takes a list of integers and returns the
+    largest difference between any two numbers in the list.
+  test_cases:
+  - expected_output: 8
+    inputs:
+    - - 1
+      - 9
+      - 3
+      - 5
+      - 7
+  - expected_output: 11
+    inputs:
+    - - 10
+      - 2
+      - 3
+      - 14
+      - 5
+  - expected_output: 0
+    inputs:
+    - - 1
+      - 1
+      - 1
+      - 1
+      - 1
+- task: Write a function named 'solve' that takes a string and returns True if it's
+    a pangram (contains every letter of the alphabet at least once), False otherwise.
+  test_cases:
+  - expected_output: true
+    inputs:
+    - The quick brown fox jumps over the lazy dog.
+  - expected_output: false
+    inputs:
+    - This is not a pangram.
+  - expected_output: true
+    inputs:
+    - Pack my box with five dozen liquor jugs.
+- task: Write a function named 'solve' that takes a string and returns True if it's
+    a valid ISBN-10 (International Standard Book Number), False otherwise.
+  test_cases:
+  - expected_output: true
+    inputs:
+    - 0471958697
+  - expected_output: false
+    inputs:
+    - 123456789X
+  - expected_output: true
+    inputs:
+    - '0306406152'
+- task: Write a function named 'solve' that takes a list of integers and returns the
+    smallest positive integer not present in the list.
+  test_cases:
+  - expected_output: 3
+    inputs:
+    - - 1
+      - 2
+      - 4
+      - 5
+  - expected_output: 1
+    inputs:
+    - - 0
+      - -1
+      - -2
+      - -3
+  - expected_output: 6
+    inputs:
+    - - 1
+      - 2
+      - 3
+      - 4
+      - 5
+- task: Write a function named 'solve' that takes a list of integers and returns the
+    longest subsequence of consecutive integers.
+  test_cases:
+  - expected_output:
+    - 2
+    - 3
+    - 4
+    - 5
+    inputs:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 10
+  - expected_output:
+    - -3
+    - -2
+    - -1
+    - 0
+    inputs:
+    - -3
+    - -2
+    - -1
+    - 0
+    - 5
+    - 6
+    - 7
+  - expected_output:
+    - 1
+    inputs:
+    - 1
+    - 2
+    - 4
+    - 6
+    - 8
+- task: Write a function named 'solve' that takes a string and returns the number
+    of words in the string.
+  test_cases:
+  - expected_output: 3
+    inputs: This is a test
+  - expected_output: 5
+    inputs: The quick brown fox jumps over the lazy dog
+  - expected_output: 1
+    inputs: Hello
+- task: Write a function named 'solve' that takes a list of integers and returns the
+    sum of all elements that are divisible by 3 or 5.
+  test_cases:
+  - expected_output: 33
+    inputs:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 10
+  - expected_output: 15
+    inputs:
+    - 3
+    - 5
+    - 6
+    - 9
+    - 12
+  - expected_output: 0
+    inputs:
+    - 1
+    - 2
+    - 4
+    - 7
+    - 8
+- task: Write a function named 'solve' that takes a list of integers and returns True
+    if it forms a harmonic sequence, False otherwise.
+  test_cases:
+  - expected_output: true
+    inputs:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+  - expected_output: false
+    inputs:
+    - 1
+    - 2
+    - 4
+    - 8
+    - 16
+  - expected_output: true
+    inputs:
+    - 1
+    - 3
+    - 6
+    - 10
+    - 15
+- task: Write a function named 'solve' that takes a list of integers and returns the
+    product of all elements that are greater than 10.
+  test_cases:
+  - expected_output: 30
+    inputs:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 15
+  - expected_output: 420
+    inputs:
+    - 5
+    - 6
+    - 7
+    - 8
+    - 20
+  - expected_output: 1
+    inputs:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+- task: Write a function named 'solve' that takes a string and returns True if it
+    is an isogram, False otherwise.
+  test_cases:
+  - expected_output: true
+    inputs: abcdef
+  - expected_output: false
+    inputs: hello
+  - expected_output: true
+    inputs: world
+- task: Write a function named 'solve' that takes a list of integers and returns True
+    if it forms an arithmetic progression, False otherwise.
+  test_cases:
+  - expected_output: true
+    inputs:
+    - 2
+    - 4
+    - 6
+    - 8
+    - 10
+  - expected_output: false
+    inputs:
+    - 3
+    - 6
+    - 9
+    - 12
+    - 16
+  - expected_output: true
+    inputs:
+    - 5
+    - 10
+    - 15
+    - 20
+    - 25
+- task: Write a function named 'solve' that takes a list of strings and returns True
+    if all strings contain only lowercase letters, False otherwise.
+  test_cases:
+  - expected_output: true
+    inputs:
+    - hello
+    - world
+    - python
+  - expected_output: false
+    inputs:
+    - hello
+    - World
+    - python
+  - expected_output: true
+    inputs:
+    - hello
+    - world
+    - python
+    - programming
+- task: Write a function named 'solve' that takes a list of integers and returns True
+    if it forms a palindrome sequence, False otherwise.
+  test_cases:
+  - expected_output: true
+    inputs:
+    - 1
+    - 2
+    - 3
+    - 2
+    - 1
+  - expected_output: false
+    inputs:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+  - expected_output: true
+    inputs:
+    - 5
+    - 4
+    - 3
+    - 4
+    - 5
+- task: Write a function named 'solve' that takes a list of integers and returns a
+    new list containing only the even integers from the original list.
+  test_cases:
+  - expected_output:
+    - 2
+    - 4
+    - 6
+    - 8
+    inputs:
+    - - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      - 7
+      - 8
+  - expected_output:
+    - -10
+    - 4
+    - 0
+    - 16
+    inputs:
+    - - -10
+      - -5
+      - 4
+      - 0
+      - 3
+      - 16
+      - 7
+  - expected_output: []
+    inputs:
+    - - 1
+      - 3
+      - 5
+      - 7
+      - 9
+- task: Write a function named 'solve' that takes a list of integers and returns a
+    new list containing only the prime integers from the original list.
+  test_cases:
+  - expected_output:
+    - 2
+    - 3
+    - 5
+    - 7
+    inputs:
+    - - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      - 7
+      - 8
+  - expected_output:
+    - 2
+    - 3
+    - 5
+    - 7
+    - 11
+    - 13
+    - 17
+    inputs:
+    - - -10
+      - -5
+      - 2
+      - 0
+      - 3
+      - 16
+      - 7
+      - 11
+      - 13
+      - 17
+  - expected_output: []
+    inputs:
+    - - 1
+      - 4
+      - 6
+      - 8
+      - 9
+- task: Write a function named 'solve' that takes a string and returns True if it
+    is a pangram (contains at least one occurrence of every letter in the alphabet),
+    False otherwise. Ignore case sensitivity.
+  test_cases:
+  - expected_output: true
+    inputs:
+    - The quick brown fox jumps over the lazy dog
+  - expected_output: false
+    inputs:
+    - The quick brown fox jumps over the lazy cat
+  - expected_output: true
+    inputs:
+    - Pack my box with five dozen liquor jugs.
+- task: Write a non-recursive function named 'find_longest_substring' that takes two
+    strings as input and returns the length of the longest common substring.
+  test_cases:
+    expected_output: 4
+    inputs:
+    - hello
+    - world
+- task: 'Write a function named ''validate_password'' that takes a string as input
+    and returns True if the password meets the following criteria: contains at least
+    one uppercase letter, one lowercase letter, one digit, and one special character
+    (@#$%). Otherwise, return False.'
+  test_cases:
+  - expected_output: true
+    inputs: '!P@#s3'
+  - expected_output: false
+    inputs: '!p3'
+- task: Write a function named 'find_max_value' that takes a dictionary of words and
+    their corresponding word frequencies as input and returns the most frequently
+    used word.
+  test_cases:
+  - expected_output: the
+    inputs:
+      apple: 2
+      banana: 1
+      the: 5
+- task: Write a function named 'generate_permutations' that takes a list of items
+    as input and returns all possible permutations of the list.
+  test_cases:
+  - expected_output:
+    - abc
+    - acb
+    - bac
+    - bca
+    - cab
+    - cba
+    inputs:
+    - a
+    - b
+    - c

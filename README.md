@@ -3,7 +3,7 @@
 ![Cover Image](web/images/cover.png)
 
 ## Introduction
-The Python Learning Challenge is a web application designed to help users improve their Python programming skills through interactive coding challenges kinda like [Edabit](http://www.edabit.com). Whether you're a beginner looking to learn the basics or an experienced developer seeking to sharpen your skills, this platform provides a structured way to practice Python programming in a fun and engaging manner.
+The Python Learning Challenge is a web application designed to help users improve their Python programming skills through interactive coding challenges kinda like [Edabit](edabit.com). Whether you're a beginner looking to learn the basics or an experienced developer seeking to sharpen your skills, this platform provides a structured way to practice Python programming in a fun and engaging manner.
 
 Demo URL: http://134.209.223.120:8000
 
@@ -15,7 +15,6 @@ Demo URL: http://134.209.223.120:8000
 - **Code Formatting and Syntax Highlighting**: Enjoy a seamless coding experience with code formatting and syntax highlighting powered by CodeMirror.
 - **Collapsible Task Description**: Focus on your coding task with a collapsible task description section.
 - **Responsive Design**: Access the application from any device, including desktops, laptops, tablets, and smartphones.
-- **Local Challange Generator**: Using Ollama and llama 3 you can easily generate new challanges and update the existing yaml files with the new ones that you generated.
 
 ## Getting Started
 To get started with the Python Learning Challenge, follow these steps:

@@ -1,0 +1,647 @@
+- task: Write a function named 'solve' that takes a list of integers and returns the
+    sum of all positive integers.
+  test_cases:
+  - expected_output: 10
+    inputs:
+    - - 1
+      - -2
+      - 3
+      - -4
+      - 5
+      - -6
+      - 7
+  - expected_output: 15
+    inputs:
+    - - 10
+      - -2
+      - 3
+      - -4
+      - 5
+      - -6
+      - 7
+  - expected_output: 0
+    inputs:
+    - - -1
+      - -2
+      - -3
+      - -4
+      - -5
+- task: Write a function named 'solve' that takes a string and returns True if it's
+    a palindrome, False otherwise.
+  test_cases:
+  - expected_output: true
+    inputs:
+    - racecar
+  - expected_output: false
+    inputs:
+    - hello
+  - expected_output: true
+    inputs:
+    - level
+- task: Write a function named 'solve' that takes a list of integers and returns the
+    average of all numbers in the list.
+  test_cases:
+  - expected_output: 4
+    inputs:
+    - - 1
+      - 2
+      - 3
+      - 5
+      - 10
+  - expected_output: 7
+    inputs:
+    - - 10
+      - 5
+      - 3
+      - 7
+      - 12
+  - expected_output: 0
+    inputs:
+    - []
+- task: Write a function named 'solve' that takes two strings and returns True if
+    they are anagrams, False otherwise.
+  test_cases:
+  - expected_output: true
+    inputs:
+    - listen
+    - silent
+  - expected_output: false
+    inputs:
+    - hello
+    - world
+  - expected_output: true
+    inputs:
+    - debit card
+    - bad credit
+- task: Write a function named 'solve' that takes a list of integers and returns the
+    nth Fibonacci number, where n is the first number in the list.
+  test_cases:
+  - expected_output: 13
+    inputs:
+    - - 7
+  - expected_output: 55
+    inputs:
+    - - 10
+  - expected_output: 0
+    inputs:
+    - - 0
+- task: Write a function named 'solve' that takes a list of strings and returns the
+    longest common prefix among them.
+  test_cases:
+  - expected_output: fl
+    inputs:
+    - - flower
+      - flow
+      - flight
+  - expected_output: ''
+    inputs:
+    - - dog
+      - racecar
+      - car
+  - expected_output: test
+    inputs:
+    - - testcase
+      - testing
+      - tested
+- task: Write a function named 'solve' that takes two integers m and n and returns
+    the number of elements in the range [m, n] that are not divisible by either m
+    or n.
+  test_cases:
+  - expected_output: 3
+    inputs:
+    - 2
+    - 5
+  - expected_output: 8
+    inputs:
+    - 4
+    - 12
+- task: Write a function named 'solve' that takes a list of strings and returns the
+    longest string in the list.
+  test_cases:
+  - expected_output: banana
+    inputs:
+    - apple
+    - banana
+    - orange
+  - expected_output: pineapple
+    inputs:
+    - grape
+    - pineapple
+    - watermelon
+  - expected_output: elephant
+    inputs:
+    - elephant
+    - giraffe
+    - zebra
+- task: Write a function named 'solve' that takes a list of integers and returns the
+    count of distinct numbers in the list.
+  test_cases:
+  - expected_output: 4
+    inputs:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 4
+    - 3
+    - 2
+    - 1
+  - expected_output: 3
+    inputs:
+    - 5
+    - 5
+    - 5
+    - 5
+    - 5
+    - 5
+  - expected_output: 5
+    inputs:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+- task: Write a function named 'solve' that takes a list of strings and returns the
+    number of unique characters across all strings.
+  test_cases:
+  - expected_output: 5
+    inputs:
+    - apple
+    - banana
+    - cherry
+  - expected_output: 8
+    inputs:
+    - hello
+    - world
+    - python
+  - expected_output: 3
+    inputs:
+    - cat
+    - dog
+    - bird
+- task: Write a function named 'solve' that takes a list of integers and returns True
+    if it contains any duplicate elements, False otherwise.
+  test_cases:
+  - expected_output: true
+    inputs:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 2
+  - expected_output: false
+    inputs:
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+  - expected_output: true
+    inputs:
+    - 1
+    - 2
+    - 3
+    - 1
+- task: Write a function named 'solve' that takes a list of strings and returns the
+    number of strings that contain the substring 'python'.
+  test_cases:
+  - expected_output: 2
+    inputs:
+    - python
+    - pythonic
+    - java
+    - javascript
+  - expected_output: 0
+    inputs:
+    - java
+    - javascript
+  - expected_output: 1
+    inputs:
+    - python
+    - pythonista
+    - c++
+- task: Write a function named 'solve' that takes a string and returns True if it
+    is a valid IPv4 address, False otherwise.
+  test_cases:
+  - expected_output: true
+    inputs: 192.168.1.1
+  - expected_output: false
+    inputs: 256.256.256.256
+  - expected_output: false
+    inputs: abc.def.ghi.jkl
+- task: Write a function named 'solve' that takes a list of strings and returns the
+    number of palindromic strings in the list.
+  test_cases:
+  - expected_output: 2
+    inputs:
+    - level
+    - radar
+    - hello
+    - world
+  - expected_output: 3
+    inputs:
+    - madam
+    - noon
+    - level
+  - expected_output: 1
+    inputs:
+    - hello
+    - world
+    - racecar
+- task: Write a function named 'solve' that takes a list of integers and returns True
+    if it contains a Pythagorean triplet, False otherwise.
+  test_cases:
+  - expected_output: true
+    inputs:
+    - 3
+    - 4
+    - 5
+    - 6
+  - expected_output: false
+    inputs:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+  - expected_output: true
+    inputs:
+    - 5
+    - 12
+    - 13
+    - 14
+- task: Write a function named 'solve' that takes a string and returns the number
+    of occurrences of each character in the string as a dictionary.
+  test_cases:
+  - expected_output:
+      e: 1
+      h: 1
+      l: 2
+      o: 1
+    inputs: hello
+  - expected_output:
+      a: 2
+      e: 1
+      l: 2
+      p: 2
+    inputs: apple
+  - expected_output:
+      a: 2
+      c: 1
+      t: 1
+    inputs: cat
+- task: Write a function named 'solve' that takes a list of strings and returns the
+    number of strings that have length greater than or equal to 5.
+  test_cases:
+  - expected_output: 2
+    inputs:
+    - apple
+    - banana
+    - orange
+  - expected_output: 1
+    inputs:
+    - elephant
+    - giraffe
+    - zebra
+  - expected_output: 3
+    inputs:
+    - cat
+    - dog
+    - bird
+- task: Write a function named 'solve' that takes a single integer input and returns
+    its cube.
+  test_cases:
+  - expected_output: 8
+    inputs:
+    - 2
+  - expected_output: 27
+    inputs:
+    - 3
+  - expected_output: 64
+    inputs:
+    - 4
+- task: Write a function named 'solve' that takes a string and returns a new string
+    with all vowels removed.
+  test_cases:
+  - expected_output: hll
+    inputs:
+    - hello
+  - expected_output: pythn
+    inputs:
+    - python
+  - expected_output: cndng
+    inputs:
+    - coding
+- task: Write a function named 'solve' that takes a list of integers and returns True
+    if the list is sorted in non-decreasing order, False otherwise.
+  test_cases:
+  - expected_output: true
+    inputs:
+    - - 1
+      - 2
+      - 3
+      - 4
+      - 5
+  - expected_output: false
+    inputs:
+    - - 5
+      - 4
+      - 3
+      - 2
+      - 1
+  - expected_output: true
+    inputs:
+    - - -3
+      - -2
+      - -1
+      - 0
+      - 1
+- task: Write a function named 'solve' that takes a list of integers and an integer
+    k, and returns True if there are k consecutive numbers in the list, False otherwise.
+  test_cases:
+  - expected_output: true
+    inputs:
+    - - 1
+      - 2
+      - 3
+      - 4
+      - 5
+    - 3
+  - expected_output: false
+    inputs:
+    - - 1
+      - 2
+      - 4
+      - 5
+      - 6
+    - 3
+  - expected_output: true
+    inputs:
+    - - 1
+      - 3
+      - 4
+      - 5
+    - 2
+- task: Write a function named 'solve' that takes a list of strings and a string prefix,
+    and returns a new list containing only the strings that start with the given prefix.
+  test_cases:
+  - expected_output:
+    - apple
+    - apricot
+    inputs:
+    - - apple
+      - apricot
+      - banana
+      - orange
+    - ap
+  - expected_output:
+    - dog
+    - duck
+    inputs:
+    - - dog
+      - duck
+      - cat
+      - fish
+    - d
+  - expected_output: []
+    inputs:
+    - - hello
+      - world
+    - z
+- task: Write a function named 'solve' that takes a list of integers and returns the
+    number of elements that are multiples of 5.
+  test_cases:
+  - expected_output: 3
+    inputs:
+    - 5
+    - 10
+    - 15
+    - 20
+    - 25
+  - expected_output: 2
+    inputs:
+    - 3
+    - 6
+    - 9
+    - 12
+    - 15
+  - expected_output: 0
+    inputs:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 6
+- task: Write a function named 'solve' that takes a list of integers and returns the
+    number of elements that are perfect cubes.
+  test_cases:
+  - expected_output: 2
+    inputs:
+    - 1
+    - 8
+    - 27
+    - 64
+    - 125
+  - expected_output: 3
+    inputs:
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 10
+  - expected_output: 1
+    inputs:
+    - 1
+    - 8
+    - 27
+    - 64
+- task: Write a function named 'solve' that takes a list of integers and returns the
+    maximum value in the list.
+  test_cases:
+  - expected_output: 8
+    inputs:
+    - - 1
+      - 3
+      - 8
+      - 4
+      - 2
+  - expected_output: -2
+    inputs:
+    - - -5
+      - -2
+      - -8
+      - -10
+      - -2
+  - expected_output: 100
+    inputs:
+    - - 100
+      - 50
+      - 20
+      - 80
+      - 30
+- task: Write a function named 'solve' that takes a string and returns True if it
+    is a palindrome, False otherwise.
+  test_cases:
+  - expected_output: true
+    inputs:
+    - radar
+  - expected_output: false
+    inputs:
+    - python
+  - expected_output: true
+    inputs:
+    - racecar
+- task: Write a function named 'solve' that takes a list of integers and returns the
+    sum of all the elements in the list.
+  test_cases:
+  - expected_output: 18
+    inputs:
+    - - 1
+      - 3
+      - 8
+      - 4
+      - 2
+  - expected_output: -27
+    inputs:
+    - - -5
+      - -2
+      - -8
+      - -10
+      - -2
+  - expected_output: 280
+    inputs:
+    - - 100
+      - 50
+      - 20
+      - 80
+      - 30
+- task: Write a function named 'solve' that takes a string and returns a new string
+    with all vowels removed.
+  test_cases:
+  - expected_output: hll
+    inputs:
+    - hello
+  - expected_output: llmnp
+    inputs:
+    - aluminum
+  - expected_output: rth
+    inputs:
+    - earth
+- task: Write a function named 'solve' that takes a list of integers and returns True
+    if the list is sorted in non-decreasing order, False otherwise.
+  test_cases:
+  - expected_output: true
+    inputs:
+    - - 1
+      - 2
+      - 3
+      - 4
+      - 5
+  - expected_output: false
+    inputs:
+    - - 5
+      - 3
+      - 8
+      - 2
+      - 1
+  - expected_output: true
+    inputs:
+    - - -5
+      - -2
+      - -1
+      - 0
+      - 3
+      - 7
+- task: Write a function named 'solve' that takes a list of integers and returns the
+    nth Fibonacci number, where n is the first element of the list.
+  test_cases:
+  - expected_output: 21
+    inputs:
+    - - 8
+  - expected_output: 55
+    inputs:
+    - - 10
+  - expected_output: 1
+    inputs:
+    - - 2
+- task: Write a function named 'solve' that takes a list of strings and returns the
+    longest string in the list.
+  test_cases:
+  - expected_output: banana
+    inputs:
+    - - apple
+      - banana
+      - orange
+  - expected_output: elephant
+    inputs:
+    - - tiger
+      - lion
+      - elephant
+  - expected_output: ''
+    inputs:
+    - []
+- task: Implement a class named 'BankAccount' that has attributes for account number,
+    balance, and interest rate. Include methods to deposit and withdraw funds, calculate
+    the total balance with interest, and display account information.
+  test_cases:
+    expected_output: 'Account Number: 12345, Balance: $1000.00, Interest Rate: 2.5%'
+    inputs:
+    - 12345
+    - 1000
+    - 2.5
+- task: Implement a class named 'WeatherStation' that has attributes for temperature,
+    humidity, and pressure. Include methods to calculate the average reading, display
+    weather conditions, and simulate real-time readings.
+  test_cases:
+    expected_output: "Temperature: 20\xC2\xB0C, Humidity: 60%, Pressure: 1013 mbar"
+    inputs:
+    - 20.0
+    - 0.6
+    - 1013
+- task: Implement a class named 'ShoppingCart' that has attributes for products and
+    prices. Include methods to add, remove, and display items in the cart.
+  test_cases:
+    expected_output: 'Product 1: $10.00, Product 2: $5.00, Total: $15.00'
+    inputs:
+    - - product 1
+      - 10
+    - - product 2
+      - 5
+- task: Implement a class named 'BankAccount' that represents a bank account with
+    attributes for account number, balance, and interest rate. Include methods to
+    deposit money, withdraw money, and calculate the total amount after a specified
+    time period.
+  test_cases:
+  - expected_output: 'Account Number: 123456, Balance: $1000.00'
+    inputs:
+    - '123456'
+    - 1000.0
+    - 0.02
+  - expected_output: 'Account Number: 789012, Balance: $800.00'
+    inputs:
+    - '789012'
+    - 800.0
+    - 0.03
+- task: Implement a class named 'BankAccount' that represents a bank account with
+    attributes for balance, account number, and owner. Include methods to deposit,
+    withdraw, and display account information.
+  test_cases:
+  - expected_output: 'Balance: $500, Account Number: 123456, Owner: John Doe'
+    inputs:
+    - 500
+    - John Doe
+    - '123456'
+- task: Implement a class named 'ShoppingCart' that represents an online shopping
+    cart with attributes for items, subtotal, and total. Include methods to add, remove,
+    and calculate the total cost of the items.
+  test_cases:
+  - expected_output: 'Subtotal: $100, Total: $110'
+    inputs:
+    - name: Apple
+      price: 50
+    - name: Banana
+      price: 60

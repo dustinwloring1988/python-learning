@@ -1,0 +1,321 @@
+- task: Write a function named 'solve' that takes a string input and returns its length.
+  test_cases:
+  - expected_output: 5
+    inputs:
+    - hello
+  - expected_output: 10
+    inputs:
+    - pythonrocks
+  - expected_output: 0
+    inputs:
+    - ''
+- task: Write a function named 'solve' that takes a list of integers and returns the
+    product of all even numbers in the list.
+  test_cases:
+  - expected_output: 8
+    inputs:
+    - - 1
+      - 2
+      - 3
+      - 4
+  - expected_output: 48
+    inputs:
+    - - 2
+      - 3
+      - 4
+      - 5
+      - 6
+  - expected_output: 1
+    inputs:
+    - - 1
+      - 3
+      - 5
+- task: Write a function named 'solve' that takes a string and returns the string
+    reversed.
+  test_cases:
+  - expected_output: olleh
+    inputs:
+    - hello
+  - expected_output: gnirts
+    inputs:
+    - string
+  - expected_output: '12345'
+    inputs:
+    - '54321'
+- task: Write a function named 'solve' that takes a list of integers and returns the
+    number of prime numbers in the list.
+  test_cases:
+  - expected_output: 4
+    inputs:
+    - - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      - 7
+      - 8
+      - 9
+      - 10
+  - expected_output: 5
+    inputs:
+    - - 11
+      - 12
+      - 13
+      - 14
+      - 15
+  - expected_output: 0
+    inputs:
+    - - 4
+      - 6
+      - 8
+      - 9
+      - 10
+- task: Write a function named 'solve' that takes a list of integers and returns the
+    median value of the list.
+  test_cases:
+  - expected_output: 3
+    inputs:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+  - expected_output: 4
+    inputs:
+    - 3
+    - 5
+    - 1
+    - 4
+    - 2
+  - expected_output: 2
+    inputs:
+    - 2
+- task: Write a function named 'solve' that takes a list of integers and returns the
+    sum of the squares of all even integers in the list.
+  test_cases:
+  - expected_output: 20
+    inputs:
+    - 1
+    - 2
+    - 3
+    - 4
+  - expected_output: 68
+    inputs:
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+  - expected_output: 0
+    inputs:
+    - 1
+    - 3
+    - 5
+    - 7
+- task: Write a function named 'solve' that takes a string and returns True if it
+    contains only alphanumeric characters, False otherwise.
+  test_cases:
+  - expected_output: true
+    inputs: hello123
+  - expected_output: false
+    inputs: hello world
+  - expected_output: false
+    inputs: '!@#$%'
+- task: Write a function named 'solve' that takes a string and returns True if it
+    is a valid email address, False otherwise.
+  test_cases:
+  - expected_output: true
+    inputs: example@email.com
+  - expected_output: false
+    inputs: notanemail
+  - expected_output: false
+    inputs: example@.com
+- task: Write a function named 'solve' that takes a string and returns True if it
+    is a valid URL, False otherwise.
+  test_cases:
+  - expected_output: true
+    inputs: https://www.example.com
+  - expected_output: false
+    inputs: example.com
+  - expected_output: true
+    inputs: ftp://ftp.example.com
+- task: Write a function named 'solve' that takes a string and returns True if it
+    contains only unique characters, False otherwise.
+  test_cases:
+  - expected_output: true
+    inputs: abcde
+  - expected_output: false
+    inputs: hello
+  - expected_output: true
+    inputs: world
+- task: Write a function named 'solve' that takes a list of strings and returns a
+    new list with all strings converted to uppercase.
+  test_cases:
+  - expected_output:
+    - HELLO
+    - WORLD
+    inputs:
+    - - hello
+      - world
+  - expected_output:
+    - PYTHON
+    - IS
+    - GREAT
+    inputs:
+    - - Python
+      - is
+      - great
+  - expected_output:
+    - HELLO
+    inputs:
+    - - Hello
+- task: Write a function named 'solve' that takes a list of strings and returns the
+    shortest string in the list.
+  test_cases:
+  - expected_output: cat
+    inputs:
+    - - dog
+      - cat
+      - bird
+  - expected_output: apple
+    inputs:
+    - - apple
+      - banana
+      - orange
+  - expected_output: a
+    inputs:
+    - - apple
+      - a
+      - banana
+      - orange
+- task: Write a function named 'solve' that takes a string input and returns True
+    if it contains balanced parentheses (every opening parenthesis has a corresponding
+    closing parenthesis), False otherwise.
+  test_cases:
+  - expected_output: true
+    inputs: (hello)
+  - expected_output: false
+    inputs: (hello
+  - expected_output: true
+    inputs: ()((()))
+- task: Write a function named 'solve' that takes a single string input and returns
+    its length.
+  test_cases:
+  - expected_output: 5
+    inputs:
+    - hello
+  - expected_output: 12
+    inputs:
+    - pythonrocks
+  - expected_output: 0
+    inputs:
+    - ''
+- task: Write a function named 'solve' that takes a list of strings and returns a
+    new list containing the lengths of each string in the original list.
+  test_cases:
+  - expected_output:
+    - 5
+    - 3
+    - 6
+    inputs:
+    - - apple
+      - cat
+      - banana
+  - expected_output:
+    - 4
+    - 7
+    - 10
+    inputs:
+    - - fish
+      - elephant
+      - crocodile
+  - expected_output: []
+    inputs:
+    - []
+- task: Write a function named 'solve' that takes a list of integers and returns True
+    if there are any duplicate elements in the list, False otherwise.
+  test_cases:
+  - expected_output: true
+    inputs:
+    - - 1
+      - 2
+      - 3
+      - 4
+      - 2
+  - expected_output: false
+    inputs:
+    - - 5
+      - 7
+      - 9
+      - 11
+      - 13
+  - expected_output: true
+    inputs:
+    - - 1
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+- task: Write a function named 'solve' that takes a string and returns the string
+    with each word reversed.
+  test_cases:
+  - expected_output: olleh dlrow
+    inputs:
+    - hello world
+  - expected_output: eman yppah
+    inputs:
+    - name happy
+  - expected_output: ''
+    inputs:
+    - ''
+- task: Write a function named 'count_unique_chars' that takes a string as input and
+    returns the count of unique characters.
+  test_cases:
+    expected_output: 5
+    inputs: hello world
+- task: Write a function named 'sort_anagrams' that takes a list of strings as input
+    and returns the sorted anagrams.
+  test_cases:
+    expected_output:
+    - act
+    - cat
+    - tac
+    inputs:
+    - act
+    - cat
+    - tac
+- task: Write a function named 'reverse_string' that takes a string as input and returns
+    the reversed string.
+  test_cases: -7171
+- task: Write a function named 'find_duplicates' that takes a list of integers as
+    input and returns a dictionary where the keys are unique elements from the list
+    and the values are lists containing duplicate elements. Ensure that the function
+    handles empty lists gracefully.
+  test_cases:
+  - expected_output:
+      '1':
+      - 2
+      - 3
+      '4':
+      - 5
+    inputs:
+    - 1
+    - 1
+    - 2
+    - 2
+    - 3
+    - 3
+    - 4
+    - 4
+    - 4
+    - 5
+  - expected_output: {}
+    inputs: []
+- task: Write a function named 'reverse_words' that takes a string of words as input
+    and returns the reversed string with each word in reverse order.
+  test_cases:
+  - expected_output: olleh yllort
+    inputs:
+    - hello world
