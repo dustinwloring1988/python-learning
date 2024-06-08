@@ -18,3 +18,4 @@ def execute_user_code(user_code, input_data):
             return "Error: Your code must define a function named 'solve'."
     except Exception as e:
         return f"Error executing your code: {e}\n{traceback.format_exc()}"
+
