@@ -1,0 +1,17 @@
+# Compiled Python files
+__pycache__/
+*.pyc
+
+# Virtual environment
+venv/
+.env
+
+# Docker
+docker-compose.override.yml
+docker-compose.yml
+
+# PostgreSQL data
+pgdata/
+
+# Logs
+*.log
