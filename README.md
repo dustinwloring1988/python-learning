@@ -15,6 +15,7 @@ Demo URL: http://134.209.223.120:8000
 - **Code Formatting and Syntax Highlighting**: Enjoy a seamless coding experience with code formatting and syntax highlighting powered by CodeMirror.
 - **Collapsible Task Description**: Focus on your coding task with a collapsible task description section.
 - **Responsive Design**: Access the application from any device, including desktops, laptops, tablets, and smartphones.
+- **Local Challange Generator**: Using Ollama and llama 3 you can easily generate new challanges and update the existing yaml files with the new ones that you generated.
 
 ## Getting Started
 To get started with the Python Learning Challenge, follow these steps:
