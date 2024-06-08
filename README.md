@@ -5,6 +5,8 @@
 ## Introduction
 The Python Learning Challenge is a web application designed to help users improve their Python programming skills through interactive coding challenges kinda like [Edabit](edabit.com). Whether you're a beginner looking to learn the basics or an experienced developer seeking to sharpen your skills, this platform provides a structured way to practice Python programming in a fun and engaging manner.
 
+Demo URL: http://134.209.223.120:8000
+
 ## Features
 - **Multiple Difficulty Levels**: Choose from easy, medium, and hard difficulty levels to suit your skill level and learning goals.
 - **Dynamic Challenge Selection**: Select challenges from a variety of tasks provided at each difficulty level.
