@@ -3,6 +3,7 @@ import ast
 import traceback
 import yaml
 import os
+import datetime
 
 app = Flask(__name__)
 
@@ -58,10 +59,18 @@ html_template = """
         collapseContent.classList.toggle('active');
       });
 
-      // Reset output when new challenge is loaded
+      // Start timer when "Load Challenge" button is clicked
+      var loadChallengeBtn = document.querySelector('.btn-load-challenge');
+      var startTime = null;
+      loadChallengeBtn.addEventListener('click', function() {
+        startTime = Date.now(); // Start the timer
+      });
+
+      // Reset output and timer when new challenge is loaded
       var selectChallenge = document.querySelector('select[name="challenge"]');
       selectChallenge.addEventListener('change', function() {
         outputDiv.innerHTML = ''; // Reset output
+        startTime = null; // Reset the timer
       });
 
       // Show toast message when all tests are passed
@@ -100,7 +109,7 @@ html_template = """
           <option value="{{ idx }}" {% if idx == challenge_index %}selected{% endif %}>Challenge {{ idx+1 }}</option>
         {% endfor %}
       </select>
-      <button type="submit" class="btn"><i class="fas fa-play"></i> Load Challenge</button>
+      <button type="submit" class="btn btn-load-challenge"><i class="fas fa-play"></i> Load Challenge</button>
     </form>
     <div class="task">
       <h2>Task</h2>
@@ -145,18 +154,19 @@ def index():
     difficulty = request.args.get('difficulty', 'easy')
     challenge_index = int(request.args.get('challenge', 0))
     
+    code = ""  # Initialize the code variable
+    
     if request.method == "POST":
         difficulty = request.form["difficulty"]
         challenge_index = int(request.form["challenge_index"])
         code = request.form["code"]
-    else:
-        code = ""
     
     selected_challenge = challenges[difficulty][challenge_index]
     task = selected_challenge['task']
     test_cases = selected_challenge['test_cases']
-    
+  
     output = ""
+  
     if request.method == "POST":
         try:
             parsed_code = ast.parse(code)
@@ -183,6 +193,4 @@ def index():
     return render_template_string(html_template, task=task, code=code, output=output, challenges=challenges, difficulty=difficulty, challenge_index=challenge_index, enumerate=enumerate)
 
 if __name__ == "__main__":
-
     app.run(debug=True)
-
