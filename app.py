@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template_string
+from flask import Flask, request, render_template
 import ast
 import traceback
 import yaml
@@ -24,130 +24,6 @@ for difficulty, filename in DIFFICULTY_FILES.items():
     filepath = os.path.join(CHALLENGES_FOLDER, filename)
     with open(filepath, 'r') as file:
         challenges[difficulty] = yaml.safe_load(file)
-
-# HTML template for the form
-html_template = """
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Python Code Challenge</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.0/codemirror.min.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.0/codemirror.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.0/mode/python/python.min.js"></script>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 20px; }
-    .container { max-width: 800px; margin: 0 auto; }
-    .task { background-color: #f9f9f9; padding: 10px; border-radius: 5px; margin-bottom: 20px; }
-    .output { background-color: #f1f1f1; padding: 10px; border-radius: 5px; margin-top: 20px; display: block; }
-    textarea { width: 100%; height: 200px; font-family: monospace; }
-    .btn { padding: 10px 20px; cursor: pointer; background-color: #007bff; color: #fff; border: none; border-radius: 5px; }
-    .btn:hover { background-color: #0056b3; }
-    .toast { position: fixed; top: 20px; right: 20px; background-color: #007bff; color: #fff; padding: 10px; border-radius: 5px; display: none; }
-    .collapse-btn { cursor: pointer; }
-    .collapse-content { display: none; }
-    .collapse-content.active { display: block; }
-  </style>
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      var collapseBtn = document.querySelector('.collapse-btn');
-      var collapseContent = document.querySelector('.collapse-content');
-      var outputDiv = document.querySelector('.output');
-
-      collapseBtn.addEventListener('click', function() {
-        collapseContent.classList.toggle('active');
-      });
-
-      // Start timer when "Load Challenge" button is clicked
-      var loadChallengeBtn = document.querySelector('.btn-load-challenge');
-      var startTime = null;
-      loadChallengeBtn.addEventListener('click', function() {
-        startTime = Date.now(); // Start the timer
-      });
-
-      // Reset output and timer when new challenge is loaded
-      var selectChallenge = document.querySelector('select[name="challenge"]');
-      selectChallenge.addEventListener('change', function() {
-        outputDiv.innerHTML = ''; // Reset output
-        startTime = null; // Reset the timer
-      });
-
-      // Show toast message when all tests are passed
-      var output = document.querySelector('.output pre');
-      if (output && output.innerText.includes('Congratulations! All test cases passed.')) {
-        var toast = document.querySelector('.toast');
-        toast.style.display = 'block';
-        setTimeout(function() {
-          toast.style.display = 'none';
-        }, 3000);
-      }
-
-      // Initialize CodeMirror
-      var codeMirrorTextarea = document.querySelector('textarea[name="code"]');
-      var codeMirrorEditor = CodeMirror.fromTextArea(codeMirrorTextarea, {
-        mode: 'python',
-        theme: 'default',
-        lineNumbers: true,
-        indentUnit: 2, // Set tab to indent 2 spaces
-        autofocus: true
-      });
-    });
-  </script>
-</head>
-<body>
-  <div class="container">
-    <h1>Select Difficulty Level and Challenge</h1>
-    <form method="GET">
-      <select name="difficulty">
-        {% for level in challenges.keys() %}
-          <option value="{{ level }}" {% if level == difficulty %}selected{% endif %}>{{ level.capitalize() }}</option>
-        {% endfor %}
-      </select>
-      <select name="challenge">
-        {% for idx, challenge in enumerate(challenges[difficulty]) %}
-          <option value="{{ idx }}" {% if idx == challenge_index %}selected{% endif %}>Challenge {{ idx+1 }}</option>
-        {% endfor %}
-      </select>
-      <button type="submit" class="btn btn-load-challenge"><i class="fas fa-play"></i> Load Challenge</button>
-    </form>
-    <div class="task">
-      <h2>Task</h2>
-      <button class="collapse-btn"><i class="fas fa-chevron-down"></i></button>
-      <div class="collapse-content active">
-        <p>{{ task }}</p>
-      </div>
-    </div>
-    <form method="POST">
-      <input type="hidden" name="difficulty" value="{{ difficulty }}">
-      <input type="hidden" name="challenge_index" value="{{ challenge_index }}">
-      <textarea name="code" placeholder="Write your Python code here...">{{ code }}</textarea>
-      <button type="submit" class="btn"><i class="fas fa-check"></i> Submit</button>
-    </form>
-    <div class="output">
-      <h3>Output</h3>
-      <pre>{{ output }}</pre>
-    </div>
-    <div class="toast">
-      <i class="fas fa-check-circle"></i> Congratulations! All test cases passed.
-    </div>
-  </div>
-</body>
-</html>
-
-"""
-
-def execute_user_code(user_code, input_data):
-    local_vars = {}
-    try:
-        exec(user_code, {}, local_vars)
-        if 'solve' in local_vars:
-            result = local_vars['solve'](*input_data)
-            return result
-        else:
-            return "Error: Your code must define a function named 'solve'."
-    except Exception as e:
-        return f"Error executing your code: {e}\n{traceback.format_exc()}"
 
 @app.route("/", methods=["GET", "POST"])
 def index():
@@ -190,7 +66,19 @@ def index():
                 results.append("Some test cases failed. Try again.")
             output = "\n".join(results)
     
-    return render_template_string(html_template, task=task, code=code, output=output, challenges=challenges, difficulty=difficulty, challenge_index=challenge_index, enumerate=enumerate)
+    return render_template('index.html', task=task, code=code, output=output, challenges=challenges, difficulty=difficulty, challenge_index=challenge_index, enumerate=enumerate)
+
+def execute_user_code(user_code, input_data):
+    local_vars = {}
+    try:
+        exec(user_code, {}, local_vars)
+        if 'solve' in local_vars:
+            result = local_vars['solve'](*input_data)
+            return result
+        else:
+            return "Error: Your code must define a function named 'solve'."
+    except Exception as e:
+        return f"Error executing your code: {e}\n{traceback.format_exc()}"
 
 if __name__ == "__main__":
     app.run(debug=True)
