@@ -10,6 +10,9 @@ DIFFICULTY_FILES = {
 }
 
 def load_challenges():
+    """
+    Load challenges from different files based on difficulty level and return a dictionary of challenges.
+    """
     challenges = {}
     for difficulty, filename in DIFFICULTY_FILES.items():
         filepath = os.path.join(CHALLENGES_FOLDER, filename)

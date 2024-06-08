@@ -10,6 +10,25 @@ with open("templates/template.html", "r") as file:
 
 @app.route("/", methods=["GET", "POST"])
 def index():
+    """
+    Handles the '/' route for both GET and POST requests.
+    
+    Retrieves the 'difficulty' and 'challenge' parameters from the request arguments.
+    If the request method is POST, it retrieves the 'difficulty', 'challenge_index', and 'code' parameters from the request form.
+    If the request method is GET, it initializes the 'code' parameter to an empty string.
+    
+    If a 'difficulty' parameter is provided, it loads a random challenge from the 'challenges' dictionary based on the difficulty.
+    It retrieves the 'task' from the selected challenge and sets the 'challenge_index' to the index of the selected challenge in the corresponding difficulty list.
+    
+    Initializes the 'test_cases' list to an empty list.
+    
+    If the request method is POST, it executes the user code using the 'execute_user_code' function and stores the output in the 'output' variable.
+    
+    Renders the 'html_template' template with the 'task', 'code', 'output', 'challenges', 'difficulty', and 'challenge_index' variables.
+    
+    Returns:
+        The rendered template.
+    """
     difficulty = request.args.get('difficulty')
     challenge_index = int(request.args.get('challenge', 0))
     

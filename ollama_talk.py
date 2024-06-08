@@ -5,17 +5,50 @@ import os
 import psycopg2
 
 def save_to_yaml(challenge_data):
+    """
+    Saves the challenge data to a YAML file.
+
+    Args:
+        challenge_data: The data to be saved to the YAML file.
+
+    Returns:
+        None
+    """
     with open("challenges.yaml", "a", encoding="utf-8") as file:
         yaml.dump(challenge_data, file, allow_unicode=True)
 
 def save_to_database(challenge_data):
+    """
+    Saves the given challenge data to a PostgreSQL database.
+
+    Args:
+        challenge_data (list): A list of dictionaries representing challenges. Each dictionary should have the following keys:
+            - "task" (str): The task description of the challenge.
+            - "test_cases" (list): A list of test cases for the challenge. Each test case should be a dictionary with the following keys:
+                - "inputs" (list): A list of input values for the test case.
+                - "expected_output" (any): The expected output for the test case.
+
+    Returns:
+        None
+    """
+    # Check if all required environment variables are set
+    required_env_vars = ["DB_NAME", "DB_USER", "DB_PASSWORD", "DB_HOST"]
+    missing_vars = [var for var in required_env_vars if os.getenv(var) is None]
+    if missing_vars:
+        error_message = f"The following environment variables are missing: {', '.join(missing_vars)}"
+        raise ValueError(error_message)
+
     # Connect to PostgreSQL
-    conn = psycopg2.connect(
-        dbname=os.getenv("DB_NAME"),
-        user=os.getenv("DB_USER"),
-        password=os.getenv("DB_PASSWORD"),
-        host=os.getenv("DB_HOST")
-    )
+    try:
+        conn = psycopg2.connect(
+            dbname=os.getenv("DB_NAME"),
+            user=os.getenv("DB_USER"),
+            password=os.getenv("DB_PASSWORD"),
+            host=os.getenv("DB_HOST")
+        )
+    except Exception as e:
+        error_message = f"Failed to connect to the database: {str(e)}"
+        raise ConnectionError(error_message)
 
     # Create a cursor
     cur = conn.cursor()
@@ -35,6 +68,18 @@ def save_to_database(challenge_data):
     conn.close()
 
 def main():
+    """
+    Sends a POST request to the local llama instance to generate hard-level Python challenges.
+    The challenges are defined in the request payload and the response is a YAML file.
+    The function checks if the request was successful and extracts the response JSON.
+    The response string is cleaned by removing unnecessary characters.
+    The YAML string is parsed into a Python dictionary and the 'challenges' key is removed.
+    The function checks the saving method and saves the challenges based on the chosen method.
+    If the saving method is "yaml", the challenges are saved to a YAML file.
+    If the saving method is "db", the challenges are saved to the database.
+    If the saving method is invalid, an error message is printed.
+    If the request was not successful, an error message is printed.
+    """
     # Define the request payload
     payload = {
         "model": "llama3",
@@ -64,7 +109,6 @@ def main():
         challenge_data = challenge_data.get('challenges', [])
 
         # Check the saving method
-        #TODO: get database saving working
         save_method = os.getenv("SAVE_METHOD", "yaml")
 
         # Save challenges based on the chosen method
